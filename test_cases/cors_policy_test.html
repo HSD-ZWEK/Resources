@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>CORS Policy Test</title>
+<script>
+function testCORS(source, imgElementId) {
+    var imgElement = document.getElementById(imgElementId);
+    imgElement.src = source;
+    imgElement.onerror = function() {
+        alert('CORS Policy Fehler: Kann das Bild ' + imgElementId + ' nicht laden.');
+    };
+    imgElement.onload = function() {
+        alert('Erfolg: Bild ' + imgElementId + ' geladen.');
+    };
+}
+</script>
+</head>
+<body onload="testCORS('https://meinmoodle.hosting.medien.hs-duesseldorf.de/img/wpm-offer-images/7027-1710177591927.png', 'meinMoodle1'); testCORS('https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/320px-PNG_transparency_demonstration_1.png', 'wikipediaBild'); testCORS('https://www.hs-duesseldorf.de/Slideshow_schmaleBilder/Startseite_Kreis_1.jpg', 'HSDbild'); testCORS('https://mdl.hs-duesseldorf.de/pluginfile.php/1/theme_boost_union/additionalresources/0/hsd-header-blue.png', 'moodle4Bild');">
+<h1>CORS Policy Test</h1>
+<div style="width:315px">
+    <img id="meinMoodle1" alt="Test-Bild von meinMoodle" style="object-fit:contain; width:300px; height:200px;">
+</div>
+<div style="width:320px; margin-top:20px;">
+    <img id="wikipediaBild" alt="Testbild von Wikipedia" style="object-fit:contain; width:300px; height:200px;">
+</div>
+<div style="width:320px; margin-top:20px;">
+    <img id="HSDbild" alt="Testbild von Webseite der HSD" style="object-fit:contain; width:300px; height:200px;">
+</div>
+<div style="width:320px; margin-top:20px;">
+    <img id="moodle4Bild" alt="Bild von Moodle der HSD" style="object-fit:contain; width:300px; height:200px;">
+</div>
+</body>
+</html>
+
