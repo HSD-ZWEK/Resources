@@ -85,7 +85,7 @@
             "PictureWidth": 960,
             "PresetDescription": "Erstellt Videos im H.264-Format mit einer Auflösung von bis zu 1080p und 30 Bildern pro Sekunde erstellt und enthält AAC-Stereo-Audio, alles in einem MP4-Container verpackt. Diese Kombination garantiert hohe Qualität und gute Kompatibilität mit den meisten digitalen Plattformen, was das Video ideal für die Online-Lehre macht. Es kann problemlos auf Videoplattformen und in Lernmanagementsystemen hochgeladen und gestreamt werden, was es zu einem wertvollen Werkzeug für Lehrkräfte und Lernende macht, um jederzeit und überall auf Lehrmaterialien zugreifen zu können.",
             "PresetDisabled": false,
-            "PresetName": "Moodle",
+            "PresetName": "HSD-ZWEK",
             "SubtitleAddCC": false,
             "SubtitleAddForeignAudioSearch": true,
             "SubtitleAddForeignAudioSubtitle": false,
