@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{helvet}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{ccicons}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage[export]{adjustbox}
+
+% Meta-Informationen für den PDF-Export
+\hypersetup{
+    pdftitle={Kursformate in Moodle},
+    pdfauthor={Christian-Maximilian Steier},
+    pdfsubject={Vergleich verschiedener Kursformate in Moodle},
+    pdfkeywords={Moodle, Kursformate, ZWEK, Christian-Maximilian Steier},
+    colorlinks=true,
+    linkcolor=customred,
+    urlcolor=customred,
+    pdfborderstyle={/S/U/W 1}
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% Keine Worttrennung
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\raggedright
+
+\geometry{a4paper, margin=2.5cm}
+\definecolor{customred}{RGB}{230, 0, 40}
+\definecolor{lightred}{RGB}{255, 235, 238}
+\definecolor{lightblue}{RGB}{235, 245, 255}
+\definecolor{lightgray}{RGB}{245, 245, 245}
+\definecolor{ccboxborder}{RGB}{200, 200, 200}
+\definecolor{ccboxbg}{RGB}{245, 245, 245}
+
+% Titelgestaltung
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{customred}}
+  {}{0em}{}[\vspace{-0.5em}\rule{\textwidth}{0.5pt}]
+
+% Fußzeile
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{
+\ccby{}\quad Dieses Dokument wurde erstellt von \textbf{ZWEK} der Hochschule Düsseldorf und steht unter der Lizenz \textbf{CC BY 4.0}.  
+Weitere Informationen: \url{https://creativecommons.org/licenses/by/4.0/}\\
+\textsf{\small{Stand: April 2025 • Moodle Version 4.5}}}
+\fancyfoot[R]{\textsf{\thepage}}
+
+% Gemeinsame Breite
+\newlength{\commonwidth}
+\setlength{\commonwidth}{16cm}
+
+% Modernisierte CC-Box
+\newenvironment{ccbox}{%
+  \begin{center}
+  \begin{minipage}{\commonwidth}
+  \begin{mdframed}[
+    backgroundcolor=ccboxbg,
+    linecolor=ccboxborder,
+    linewidth=0.8pt,
+    roundcorner=5pt,
+    leftmargin=0pt,
+    innerleftmargin=1em,
+    innerrightmargin=1em,
+    innertopmargin=0.7em,
+    innerbottommargin=0.7em
+  ]
+  \centering
+  \small
+}{%
+  \end{mdframed}
+  \end{minipage}
+  \end{center}
+}
+
+\begin{document}
+
+% Titel
+\begin{center}
+\textbf{\textcolor{customred}{\LARGE Kursformate in Moodle \faSitemap}}
+\end{center}
+
+\vspace{0.5cm}
+
+% Usecase Box
+\begin{center}
+\begin{minipage}{\commonwidth}
+\begin{mdframed}[backgroundcolor=lightgray, linewidth=0pt, roundcorner=5pt]
+\textbf{Anwendungsfall:}
+
+Ein gut strukturiertes Kursdesign unterstützt Lernprozesse und orientiert sich an pädagogischen Leitlinien. Moodle bietet verschiedene \textbf{Kursformate}, die eine didaktisch sinnvolle Strukturierung Ihrer Lehrveranstaltung ermöglichen und dabei unterschiedliche Lernwege und Zielgruppen berücksichtigen.
+
+\vspace{0.3cm}
+
+\textbf{Typische didaktische Einsatzszenarien:}
+\begin{itemize}
+  \item \textbf{Themenorientiert:} Strukturierung nach inhaltlichen Modulen – geeignet für projektbasiertes Lernen oder Selbstlernphasen.
+  \item \textbf{Zeitgesteuert:} Wochenstruktur mit Datumsautomatik – fördert kontinuierliches Lernen in semesterbegleitenden Kursen.
+  \item \textbf{Visuell motivierend:} Kachel- oder Rasterformate – unterstützen die Lernmotivation durch klare Navigation und visuelle Anker.
+  \item \textbf{Dialogorientiert:} Formate mit kollaborativem Fokus – geeignet für diskursive, reflektierende oder gemeinschaftlich gestaltete Lernprozesse.
+\end{itemize}
+\end{mdframed}
+\end{minipage}
+\end{center}
+
+\vspace{0.8cm}
+
+\renewcommand{\arraystretch}{1.4}
+\setlength{\tabcolsep}{8pt}
+
+% Tabelle zentriert mit linksbündigem Text in den Zellen
+\begin{center}
+\begin{minipage}{\commonwidth}
+\begin{tabular}{>{\bfseries\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{6cm}>{\raggedright\arraybackslash}p{5.5cm}}
+\toprule
+\textbf{Format} & \textbf{Didaktische Merkmale} & \textbf{Empfohlen für ...} \\
+\midrule
+Wochenformat \faCalendar & Struktur nach Kalenderwochen \newline Lernschritte werden chronologisch geführt & Kontinuierliche Begleitung im Semester \newline Zeitlich getaktete Lernphasen \\
+\midrule
+Themenformat \faListUl & Inhalte als thematische Blöcke \newline Reihenfolge flexibel anpassbar & Selbstlernkurse, Modulstruktur, Blended Learning \\
+\midrule
+Tiles \faThLarge & Kachelstruktur mit visuellen Icons \newline Fortschrittsanzeige optional & Kurse mit hoher visueller Orientierung, intuitive Navigation \\
+\midrule
+Grid \faImages & Rasteransicht mit Bildsymbolen \newline Abschnitt öffnet sich per Klick & Visuell strukturierte Kurse mit medialem Einstieg \\
+\midrule
+Komprimierte Abschnitte \faSortDown & Aufklappbare Abschnitte zur Übersicht & Kurse mit umfangreichen Materialien und vielen Themen \\
+\midrule
+Ein-Themen-Format \faFolderOpen & Register für einzelne Themenblöcke & Strukturierte Bearbeitung ohne langes Scrollen \\
+\midrule
+Flexible Themen \faLayerGroup & Hierarchisch gegliederte Unterbereiche & Komplexe Lernszenarien, z.\,B. im Projektkontext \\
+\midrule
+Soziales Format \faComments & Zentrales Diskussionsforum im Fokus & Peer-Learning, Community-basiertes Lernen, Reflexionsräume \\
+\midrule
+Einzelaktivität \faDotCircle & Fokus auf eine einzige Aktivität & Einzeltests, Umfragen, Evaluationen, Reflexionsimpulse \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{center}
+
+\vspace{0.7cm}
+
+% Tipp-Box zentriert mit gleicher Breite wie die Tabelle
+\begin{center}
+\begin{minipage}{\commonwidth}
+\fcolorbox{customred!30}{lightred!30}{%
+    \begin{minipage}{\dimexpr\commonwidth-2\fboxsep-2\fboxrule}
+    \raggedright % Inhalt der Box linksbündig
+    \textbf{\textcolor{customred}{Praxistipp:}} Wählen Sie das Kursformat bewusst entsprechend Ihrer didaktischen Zielsetzung. Eine durchdachte Struktur verbessert nicht nur die Übersichtlichkeit, sondern unterstützt auch das selbstgesteuerte Lernen Ihrer Studierenden. Sie können unterschiedliche Formate im \href{https://lern.zwek.hs-duesseldorf.de/course/index.php?categoryid=4}{\textcolor{customred}{offenen Bereich auf LernZWEK}} ausprobieren und vergleichen.
+    \end{minipage}%
+}
+\end{minipage}
+\end{center}
+
+\vspace{1.5cm}
+
+% Literatur und Links Box zentriert
+\begin{center}
+\begin{minipage}{\commonwidth}
+\begin{mdframed}[
+    backgroundcolor=lightgray, 
+    linewidth=0pt, 
+    roundcorner=5pt,
+    innerleftmargin=1em,
+    innerrightmargin=1em,
+    innertopmargin=0.7em,
+    innerbottommargin=0.7em
+]
+\raggedright % Inhalt der Box linksbündig
+\textbf{\textcolor{customred}{Literatur \& Links zum Thema}}
+\vspace{0.2cm}
+\begin{itemize}
+\item \textbf{Offizielle Moodle-Dokumentation:}
+\vspace{0.2cm}
+  \begin{itemize}
+  \item Kursformate: \url{https://docs.moodle.org/de/Kursformate}
+  \item Kachelformat (eng): \url{https://moodle.org/plugins/format_tiles}
+  \item Gridforamt (eng): \url{https://moodle.org/plugins/format_grid}
+  \item Ein-Themen-Format (eng): \url{https://moodle.org/plugins/format_onetopic}
+  \item Komprimierte Abschnitte (eng): \url{https://moodle.org/plugins/format_topcoll}
+  \item Flexible Themen (eng): \url{https://moodle.org/plugins/format_flexsections}
+  \item Unterabschnitte in Moodle 4.5 (eng): \url{https://www.youtube.com/watch?v=Tqk3gjuAYHw}
+  \item Kursgestaltung Schritt für Schritt (eng): \url{https://youtu.be/788ZZ1t9nTY?si=fFVH1Dnmfzfx0qrw}
+  \end{itemize}
+\vspace{0.5cm}
+\item \textbf{Andere Quellen:}
+\vspace{0.2cm}
+  \begin{itemize}
+  \item Kurs effizient gestalten bzw. nutzen: \url{https://academic-moodle-cooperation.org/anleitungen/kurs-effizient-gestalten-bzw-nutzen/}
+  \item Kachelformat im Kurs einsetzen: \url{https://academic-moodle-cooperation.org/anleitungen/kachelformat-im-kurs-einsetzen/}
+  \end{itemize}
+\end{itemize}
+\end{mdframed}
+\end{minipage}
+\end{center}
+
+\end{document}
