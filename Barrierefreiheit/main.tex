@@ -1,0 +1,281 @@
+% ══════════════════════════════════════════════════════════════════════════════
+% Digitale Barrierefreiheit – Handreichung ZWEK / HSD
+% ══════════════════════════════════════════════════════════════════════════════
+
+\documentclass[a4paper,11pt]{article}
+
+% ── Encoding & Sprache ───────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+% ── Seitenlayout ─────────────────────────────────────────────────────────────
+\usepackage[a4paper, top=1.0cm, bottom=2.05cm,
+            left=1.10cm, right=1.10cm, includefoot]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ── Schrift ───────────────────────────────────────────────────────────────────
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ── Pakete ────────────────────────────────────────────────────────────────────
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{mdframed}
+\usepackage{ccicons}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{accsupp}
+
+% ── Unicode-Zuordnung (Copy-Paste, Suche, Screenreader) ──────────────────────
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage{cmap}
+
+% ── hyperref immer zuletzt ────────────────────────────────────────────────────
+\usepackage{hyperref}
+
+% ── Farben ────────────────────────────────────────────────────────────────────
+\definecolor{customred}{RGB}{200,0,30}
+\definecolor{lightred}{RGB}{255,235,238}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{textdunkel}{RGB}{26,26,26}
+
+% ── Typographie ───────────────────────────────────────────────────────────────
+\raggedright
+\setstretch{1.08}
+\hyphenpenalty=200
+\tolerance=400
+\emergencystretch=2em
+
+% ── PDF-Metadaten ─────────────────────────────────────────────────────────────
+\hypersetup{
+  pdftitle           = {Digitale Barrierefreiheit in der Hochschullehre},
+  pdfauthor          = {Christian-Maximilian Steier, ZWEK – Hochschule Düsseldorf},
+  pdfsubject         = {Handreichung Barrierefreiheit},
+  pdfkeywords        = {Barrierefreiheit, Lehrmaterialien, Moodle, WCAG},
+  pdflang            = {de-DE},
+  pdfdisplaydoctitle = true,
+  colorlinks         = true,
+  linkcolor          = customred,
+  urlcolor           = customred,
+}
+
+% Icons aus Bookmarks raushalten
+\pdfstringdefDisableCommands{%
+  \def\faUniversalAccess{}%
+  \def\faLaptopCode{}%
+  \def\faVideo{}%
+  \def\faClipboardList{}%
+  \def\faFile{}%
+  \def\faChalkboard{}%
+  \def\faImage{}%
+  \def\faClipboardCheck{}%
+  \def\faCheckCircle{}%
+  \def\faArrowRight{}%
+  \def\faExclamationTriangle{}%
+}
+
+% ── Footer ────────────────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\footskip}{18pt}
+\fancyfoot[C]{%
+  \ccby{}\quad Erstellt vom \textbf{ZWEK} der Hochschule Düsseldorf
+  unter \textbf{CC BY 4.0}.\\
+  \textsf{\small Quelle: Kompetenzzentrum digitale Barrierefreiheit.nrw –
+  \url{https://barrierefreiheit.dh.nrw/materialien}
+  \textbullet\ Stand: 2026}}
+
+% ── Accessible Icon Helper ────────────────────────────────────────────────────
+% Nur für dekorative Icons in Fließtext/Titeln (NICHT in \item-Labels)
+\newcommand{\AIcon}[2]{%
+  \BeginAccSupp{method=pdfstringdef,ActualText={#1}}#2\EndAccSupp%
+}
+
+% ── Listen-Symbole ────────────────────────────────────────────────────────────
+% Für \item-Labels: AccSupp NICHT verwenden – das versteckt das Icon.
+% Stattdessen: Icon sichtbar, kein ActualText nötig (rein dekorativ in Listen).
+\newcommand{\ja}  {{\textcolor{textdunkel}{\faCheckCircle}}\,}
+\newcommand{\tipp}{{\textcolor{textdunkel}{\faArrowRight}}\,}
+\newcommand{\warn}{{\textcolor{customred}{\faExclamationTriangle}}\,}
+\newcommand{\chk} {\(\square\)\,}
+
+% ── Box-Header ────────────────────────────────────────────────────────────────
+% \quad = 1em Abstand zwischen Icon und Titel
+\newcommand{\boxheader}[2]{%
+  {\small\bfseries\color{customred}#1\hspace{0.4em}#2}\\[-3pt]%
+  {\color{customred}\rule{\linewidth}{0.5pt}}\\[2pt]%
+}
+
+% ── Themenbox ─────────────────────────────────────────────────────────────────
+\newcommand{\themenbox}[3]{%
+  \begin{mdframed}[%
+    linecolor=customred, linewidth=0.95pt,
+    innerleftmargin=5pt, innerrightmargin=5pt,
+    innertopmargin=4pt, innerbottommargin=4pt,
+    skipabove=0pt, skipbelow=0pt,
+    backgroundcolor=white]
+    \boxheader{#1}{#2}
+    \begin{itemize}[leftmargin=16pt, labelsep=3pt,
+                    itemsep=1.6pt, parsep=0pt, topsep=0pt]
+      \small #3
+    \end{itemize}
+  \end{mdframed}%
+}
+
+% ── 3-Spalten-Row ─────────────────────────────────────────────────────────────
+\newcommand{\rowthree}[3]{%
+  \begin{minipage}[t]{0.325\linewidth}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.325\linewidth}#2\end{minipage}\hfill
+  \begin{minipage}[t]{0.325\linewidth}#3\end{minipage}\par%
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+\color{textdunkel}
+
+% ── Worttrennung HIER setzen: babel hat jetzt die ngerman-Muster geladen ──────
+% Mindestens 4 Buchstaben vor UND nach dem Trennstrich
+\lefthyphenmin=4
+\righthyphenmin=4
+
+% ── Titel ─────────────────────────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries\textcolor{customred}{Digitale Barrierefreiheit\enspace
+    \AIcon{(Universeller Zugang)}{\faUniversalAccess}}}
+\end{center}
+
+\vspace{0.08cm}
+
+% ── Intro-Box ─────────────────────────────────────────────────────────────────
+\fcolorbox{customred!40}{lightred}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule}
+    \small\raggedright
+    Barrierefreie Materialien helfen nicht nur Studierenden mit Behinderung –
+    sie verbessern die Qualität für alle.\\
+    \textbf{Grundsatz:} Von Beginn an barrierefrei erstellen ist einfacher als
+    nachträglich nachbessern.\\
+    \textbf{Minimalstandard:} Struktur \textbullet\ Alt-Texte
+    \textbullet\ Untertitel.
+  \end{minipage}%
+}
+
+\vspace{0.30cm}
+
+% ── Reihe 1 ───────────────────────────────────────────────────────────────────
+\rowthree
+{%
+  \themenbox{\faLaptopCode}{Moodle-Kursraum \& H5P}{%
+    \item[\ja]   Kursstruktur über \textbf{Abschnitte} organisieren
+    \item[\tipp] Texte als \textbf{Textseite} anlegen (HTML oft besser als PDF)
+    \item[\ja]   Dokumente als \textbf{.docx} oder \textbf{.pdf} bereitstellen
+    \item[\ja]   \textbf{Alt-Texte} für Bilder (Moodle-Seiten/H5P)
+    \item[\ja]   H5P: \textbf{Semantische Überschriften} (Heading\,2, 3)
+    \item[\warn] Autoplay/autom. Übergänge \textbf{deaktivieren}
+    \item[\tipp] Kurze Nutzungshinweise (Bedienung/Tastatur) voranstellen
+  }%
+}
+{%
+  \themenbox{\faVideo}{Videos \& Live/Hybrid}{%
+    \item[\ja]   \textbf{Untertitel} aktivieren und nachbearbeiten
+    \item[\ja]   Video \textbf{pausierbar}, Lautstärke einstellbar
+    \item[\ja]   Wichtige Bildinfos \textbf{gesprochen erklären}
+    \item[\tipp] \textbf{Transkript/Notizen} (2–5 Stichpunkte)
+    \item[\tipp] Live: \textbf{Mikro nutzen}, Fragen wiederholen,
+                 kurz zusammenfassen
+  }%
+}
+{%
+  \themenbox{\faClipboardList}{Aufgaben/Tests \& Tools}{%
+    \item[\ja]   Aufgaben: \textbf{Kriterien + Dateiformat} klar nennen
+    \item[\warn] Zeitlimits nur wenn nötig + Alternative anbieten
+    \item[\warn] Drag\,\&\,Drop vermeiden oder Alternative bereitstellen
+    \item[\ja]   Feedback: Text statt nur Farbe
+                 („richtig/falsch + warum")
+    \item[\ja]   Word/PPT: \textbf{Barrierefreiheit prüfen}
+    \item[\ja]   PDF: \textbf{PAC} testen, Kontrast-Checker nutzen
+  }%
+}
+
+\vspace{0.25cm}
+
+% ── Reihe 2 ───────────────────────────────────────────────────────────────────
+\rowthree
+{%
+  \themenbox{\faFile}{Dokumente (Word)}{%
+    \item[\ja]   \textbf{Formatvorlagen}: Überschrift 1, 2, 3
+    \item[\ja]   \textbf{Listen als Listenformat} (nicht manuell nachbauen)
+    \item[\ja]   \textbf{Abstände per Absatz} (keine Leerzeilen)
+    \item[\ja]   \textbf{Links sprechend} (nicht „hier klicken")
+    \item[\ja]   \textbf{Tabellenkopfzeilen} auszeichnen
+    \item[\ja]   \textbf{Dokumentsprache + Titel} als Metadaten setzen
+    \item[\tipp] Barrierefreiheit prüfen; \textbf{.docx} zusätzlich zur PDF
+  }%
+}
+{%
+  \themenbox{\faChalkboard}{Präsentationen (PowerPoint)}{%
+    \item[\ja]   Jede Folie: \textbf{Folientitel} im Platzhalter
+    \item[\ja]   Schrift mindestens \textbf{18\,pt}, serifenlos
+    \item[\ja]   \textbf{Farbe + Symbol} (nicht Farbe allein)
+    \item[\ja]   Kontrast: Text 4{,}5:1 / großer Text 3:1
+    \item[\ja]   \textbf{Lesereihenfolge} prüfen
+                 (Anordnen → Auswahlbereich)
+    \item[\tipp] PDF-Export: \textbf{Dokumentstruktur-Tags} aktivieren
+    \item[\warn] Keine automatischen Übergänge/Animationen
+  }%
+}
+{%
+  \themenbox{\faImage}{Bilder \& Alternativtexte}{%
+    \item[\ja]   Inhaltliche Bilder: \textbf{Alt-Text} eintragen
+    \item[\ja]   Dekorative Bilder: als \textbf{„dekorativ"} markieren
+    \item[\ja]   Alt-Text: Aussage + Kontext („Diagramm zeigt …")
+    \item[\ja]   \textbf{Nicht} „Im Bild ist zu sehen …"
+    \item[\ja]   Komplex: kurzer Alt-Text + Erläuterung im Text
+    \item[\tipp] KI-Tipp: Vorschlag generieren, dann fachlich prüfen
+  }%
+}
+
+\vspace{0.25cm}
+
+% ── Sofort-Checkliste ─────────────────────────────────────────────────────────
+\begin{mdframed}[%
+  linecolor=customred, linewidth=1.20pt,
+  backgroundcolor=lightgray,
+  innerleftmargin=7pt, innerrightmargin=7pt,
+  innertopmargin=4pt, innerbottommargin=5pt,
+  skipabove=0pt, skipbelow=0pt]
+  {\small\bfseries\color{customred}%
+    \faClipboardCheck\quad
+    Sofort-Checkliste: 10 Maßnahmen mit dem größten Effekt}\\[2pt]
+  \begin{minipage}[t]{0.485\linewidth}
+    \begin{itemize}[leftmargin=14pt, itemsep=1.6pt, parsep=0pt,
+                    topsep=0pt, label=\chk]
+      \small
+      \item Überschriften-Formatvorlagen konsequent verwenden
+      \item Listen als Listen; keine Leerzeilen für Abstände
+      \item Serifenlose Schrift, mind.\,18\,pt in Präsentationen
+      \item Links sprechend benennen (nicht „hier klicken")
+      \item Alt-Texte für alle inhaltlichen Bilder eintragen
+    \end{itemize}
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{0.485\linewidth}
+    \begin{itemize}[leftmargin=14pt, itemsep=1.6pt, parsep=0pt,
+                    topsep=0pt, label=\chk]
+      \small
+      \item Dekorative Bilder als „dekorativ" kennzeichnen
+      \item Farbe nie als einzigen Informationsträger nutzen
+      \item Untertitel für Videos + Kurz-Transkript/Notizen
+      \item PDF-Export mit Dokumentstruktur-Tags (wenn PDF nötig)
+      \item Barrierefreiheitsprüfer kurz laufen lassen
+    \end{itemize}
+  \end{minipage}
+\end{mdframed}
+
+\end{document}
