@@ -59,7 +59,7 @@
 \usepackage{fancyhdr}
 \usepackage{amssymb}       % für \square
 \usepackage{enumitem}
-\setlist{itemsep=0.5pt, parsep=0pt, topsep=0pt, leftmargin=9pt}
+\setlist{itemsep=0pt, parsep=0pt, topsep=0pt, leftmargin=9pt}
 \usepackage{microtype}
 \usepackage{setspace}
 \usepackage{accsupp}
@@ -82,7 +82,7 @@
 }
 
 \raggedright
-\setstretch{1.04}
+\setstretch{1.0}
 \hyphenpenalty=200
 \tolerance=1500
 \emergencystretch=4em
@@ -149,12 +149,12 @@
     colframe=framegray, colback=white,
     boxrule=0.4pt,
     borderline north={1.6pt}{0pt}{customred},
-    left=5pt, right=5pt, top=3pt, bottom=2pt,
+    left=5pt, right=5pt, top=2pt, bottom=1pt,
     nobeforeafter, width=\COL,
     grow to left by=0pt, grow to right by=0pt,
   ]%
-    {\small\bfseries\color{customred}#1\hspace{0.4em}#2}\\[-2pt]%
-    \vspace{2pt}%
+    {\small\bfseries\color{customred}#1\hspace{0.4em}#2}\\[-4pt]%
+    \vspace{1pt}%
     \begin{itemize}%
       \small #3%
     \end{itemize}%
@@ -173,7 +173,7 @@
     \vtop{\hsize=\COL\relax #3}%
   }%
   \tagstructend%
-  \par\vspace{2pt}%
+  \par\vspace{1pt}%
 }
 
 % ─────────────────────────────────────────────────────────────────────────────
@@ -208,7 +208,7 @@
   \textbf{Grundsatz:} Von Beginn an barrierefrei erstellen ist einfacher als
   nachträglich nachbessern.
 \end{tcolorbox}
-\vspace{3pt}
+\vspace{9pt}
 
 % ── Reihe 1 ───────────────────────────────────────────────────────────────────
 \rowthree
@@ -224,30 +224,17 @@
     \item[\tipp] Nutzungshinweise (Bedienung/Tastatur) voranstellen
   }%
 }{%
-  \themenbox{\AIcon{Video-Symbol}{\faVideo}}{Videos \& Live/Hybrid}{%
-    \item[\ja]   \textbf{Untertitel} aktivieren und nachbearbeiten
-    \item[\ja]   Video \textbf{pausierbar}, Lautstärke einstellbar
-    \item[\ja]   Wichtige Bildinfos \textbf{gesprochen erklären}
-    \item[\tipp] \textbf{Transkript/Notizen} (2--5 Stichpunkte)
-    \item[\tipp] Live: \textbf{Mikro nutzen}, Fragen wiederholen,
-                 kurz zusammenfassen
+  \themenbox{\AIcon{Tafel-Symbol}{\faChalkboard}}{Präsentationen (PowerPoint)}{%
+    \item[\ja]   Jede Folie: \textbf{Folientitel} im Platzhalter
+    \item[\ja]   Schrift mindestens \textbf{18\,pt}, serifenlos
+    \item[\ja]   \textbf{Farbe + Symbol} (nicht Farbe allein)
+    \item[\ja]   Genügend \textbf{Kontrast} Text\,/\,Hintergrund
+                 (4{,}5:1; große Schrift: 3:1)
+    \item[\ja]   \textbf{Lesereihenfolge} prüfen
+    \item[\tipp] PDF-Export: \textbf{Dokumentstruktur-Tags} aktivieren
+    \item[\warn] Keine automatischen Übergänge/Animationen
   }%
 }{%
-  \themenbox{\AIcon{Clipboard mit Liste}{\faClipboardList}}{Aufgaben/Tests \& Tools}{%
-    \item[\ja]   Aufgaben: \textbf{Kriterien + Dateiformat} klar nennen
-    \item[\warn] Zeitlimits nur wenn nötig + Alternative anbieten
-    \item[\warn] Drag\,\&\,Drop vermeiden oder\allowbreak{} Alternative bereitstellen
-    \item[\ja]   Feedback: Text statt nur Farbe
-                 (,,richtig/falsch + warum``)
-    \item[\ja]   Word/PPT: \textbf{Barrierefreiheit prüfen}
-    \item[\ja]   PDF: \textbf{PAC} (Windows) oder
-                 \textbf{axesCheck} (check.axes4.com)
-  }%
-}
-
-% ── Reihe 2 ───────────────────────────────────────────────────────────────────
-\rowthree
-{%
   \themenbox{\AIcon{Dokument-Symbol}{\faFile}}{Dokumente (Word)}{%
     \item[\ja]   \textbf{Formatvorlagen}: Überschrift 1, 2, 3
     \item[\ja]   \textbf{Listen als Listenformat} (nicht manuell nachbauen)
@@ -258,16 +245,20 @@
     \item[\tipp] Barrierefreiheit prüfen;
                  \textbf{.docx} zusätzlich zur PDF
   }%
-}{%
-  \themenbox{\AIcon{Tafel-Symbol}{\faChalkboard}}{Präsentationen (PowerPoint)}{%
-    \item[\ja]   Jede Folie: \textbf{Folientitel} im Platzhalter
-    \item[\ja]   Schrift mindestens \textbf{18\,pt}, serifenlos
-    \item[\ja]   \textbf{Farbe + Symbol} (nicht Farbe allein)
-    \item[\ja]   \textbf{Kontrast} Schrift\,/\,Hintergrund:
-                 mind.\,4{,}5:1 (groß: 3:1)
-    \item[\ja]   \textbf{Lesereihenfolge} prüfen
-    \item[\tipp] PDF-Export: \textbf{Dokumentstruktur-Tags} aktivieren
-    \item[\warn] Keine automatischen Übergänge/Animationen
+}
+
+% ── Reihe 2 ───────────────────────────────────────────────────────────────────
+\rowthree
+{%
+  \themenbox{\AIcon{Clipboard mit Liste}{\faClipboardList}}{Aufgaben/Tests \& Tools}{%
+    \item[\ja]   Aufgaben: \textbf{Kriterien + Dateiformat} klar nennen
+    \item[\warn] Zeitlimits nur wenn nötig + Alternative anbieten
+    \item[\warn] Drag\,\&\,Drop vermeiden oder\allowbreak{} Alternative bereitstellen
+    \item[\ja]   Feedback: Text statt nur Farbe
+                 (,,richtig/falsch + warum``)
+    \item[\ja]   Word/PPT: \textbf{Barrierefreiheit prüfen}
+    \item[\ja]   PDF: \textbf{PAC} (Windows) oder
+                 \textbf{axesCheck} (check.axes4.com)
   }%
 }{%
   \themenbox{\AIcon{Bild-Symbol}{\faImage}}{Bilder \& Alternativtexte}{%
@@ -277,6 +268,15 @@
     \item[\warn] \textbf{Nicht} ,,Im Bild ist zu sehen \ldots``
     \item[\ja]   Komplex: kurzer Alternativtext + Erläuterung im Text
     \item[\tipp] KI-Tipp: Vorschlag generieren, dann fachlich prüfen
+  }%
+}{%
+  \themenbox{\AIcon{Video-Symbol}{\faVideo}}{Videos \& Live/Hybrid}{%
+    \item[\ja]   \textbf{Untertitel} aktivieren und nachbearbeiten
+    \item[\ja]   Video \textbf{pausierbar}, Lautstärke einstellbar
+    \item[\ja]   Wichtige Bildinfos \textbf{gesprochen erklären}
+    \item[\tipp] \textbf{Transkript/Notizen} (2--5 Stichpunkte)
+    \item[\tipp] Live: \textbf{Mikro nutzen}, Fragen wiederholen,
+                 kurz zusammenfassen
   }%
 }
 
