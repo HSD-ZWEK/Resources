@@ -153,7 +153,12 @@
     nobeforeafter, width=\COL,
     grow to left by=0pt, grow to right by=0pt,
   ]%
-    {\small\bfseries\color{customred}#1\hspace{0.4em}#2}\\[-4pt]%
+    \tagstructbegin{tag=subsection}%
+    \tagmcbegin{}%
+    {\small\bfseries\color{customred}#1\hspace{0.4em}#2}%
+    \tagmcend%
+    \tagstructend%
+    \\[-4pt]%
     \vspace{1pt}%
     \begin{itemize}%
       \small #3%
@@ -299,28 +304,33 @@
     \EndAccSupp{}\enspace
     Sofort-Checkliste: 10 Maßnahmen mit dem größten Effekt%
   }{Sofort-Checkliste: 10 Massnahmen mit dem groessten Effekt}}%
-  \vspace{-1pt}%
-  \begin{minipage}[t]{\CHKIN}%
-    \begin{itemize}
-      \small
-      \item[\chk] Überschriften-Formatvorlagen konsequent verwenden
-      \item[\chk] Listen als Listen; keine Leerzeilen für Abstände
-      \item[\chk] Serifenlose Schrift, mind.\,18\,pt in Präsentationen
-      \item[\chk] Links sprechend benennen (nicht ,,hier klicken``)
-      \item[\chk] Alternativtexte für alle inhaltlichen Bilder eintragen
-    \end{itemize}%
-  \end{minipage}%
-  \hspace{\CHKGAP}%
-  \begin{minipage}[t]{\CHKIN}%
-    \begin{itemize}
-      \small
-      \item[\chk] Dekorative Bilder als ,,dekorativ`` kennzeichnen
-      \item[\chk] Farbe nie als einzigen Informationsträger nutzen
-      \item[\chk] Untertitel für Videos + Kurz-Transkript/Notizen
-      \item[\chk] PDF-Export mit Dokumentstruktur-Tags (wenn PDF nötig)
-      \item[\chk] Barrierefreiheitsprüfer kurz laufen lassen
-    \end{itemize}%
-  \end{minipage}%
+  \par\nobreak
+  \tagstructbegin{tag=Div}%
+  \noindent\hbox{%
+    \vtop{\hsize=\CHKIN\linewidth=\CHKIN\textwidth=\CHKIN\relax
+      \begin{itemize}
+        \small
+        \item[\chk] Überschriften-Formatvorlagen konsequent verwenden
+        \item[\chk] Listen als Listen; keine Leerzeilen für Abstände
+        \item[\chk] Serifenlose Schrift, mind.\,18\,pt in Präsentationen
+        \item[\chk] Links sprechend benennen (nicht ,,hier klicken``)
+        \item[\chk] Alternativtexte für alle inhaltlichen Bilder eintragen
+      \end{itemize}%
+    }%
+    \hspace{\CHKGAP}%
+    \vtop{\hsize=\CHKIN\linewidth=\CHKIN\textwidth=\CHKIN\relax
+      \begin{itemize}
+        \small
+        \item[\chk] Dekorative Bilder als ,,dekorativ`` kennzeichnen
+        \item[\chk] Farbe nie als einzigen Informationsträger nutzen
+        \item[\chk] Untertitel für Videos + Kurz-Transkript/Notizen
+        \item[\chk] PDF-Export mit Dokumentstruktur-Tags (wenn PDF nötig)
+        \item[\chk] Barrierefreiheitsprüfer kurz laufen lassen
+      \end{itemize}%
+    }%
+    \hss
+  }%
+  \tagstructend%
 \end{tcolorbox}
 
 \end{document}
