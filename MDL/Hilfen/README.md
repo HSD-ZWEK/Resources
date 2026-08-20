@@ -10,3 +10,4 @@ Jedes Hilfsblatt liegt als druckfertige **PDF** und als editierbarer **LaTeX-Que
 | [`Kursabschluss-Voraussetzungen/`](Kursabschluss-Voraussetzungen/) | Aktivitätsabschluss, Kursabschluss und bedingte Verfügbarkeit |
 | [`Kursformate/`](Kursformate/) | Vergleich der Moodle-Kursformate (Wochen, Themen, Tiles, Grid …) |
 | [`Kursimport-Zwischenspeicher/`](Kursimport-Zwischenspeicher/) | Kursimport vs. Block „Zwischenspeicher zum Teilen" |
+| [`Teilnehmerliste-Datenschutz/`](Teilnehmerliste-Datenschutz/) | Teilnehmerliste datenschutzkonform verbergen (Capability viewparticipants) |
