@@ -1,4 +1,4 @@
-# Teilnehmerliste & Datenschutz
+# Teilnehmerliste
 
 Hilfsblatt zum datenschutzkonformen Verbergen der Teilnehmerliste in Moodle über die Capability **moodle/course:viewparticipants**.
 
