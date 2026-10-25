@@ -7,6 +7,7 @@ Jedes Hilfsblatt liegt als druckfertige **PDF** und als editierbarer **LaTeX-Que
 
 | Ordner | Thema |
 |---|---|
+| [`Einschreibung-per-Liste/`](Einschreibung-per-Liste/) | Viele Teilnehmende per E-Mail-Liste einschreiben, optional direkt in Gruppen |
 | [`Kursabschluss-Voraussetzungen/`](Kursabschluss-Voraussetzungen/) | Aktivitätsabschluss, Kursabschluss und bedingte Verfügbarkeit |
 | [`Kursformate/`](Kursformate/) | Vergleich der Moodle-Kursformate (Wochen, Themen, Tiles, Grid …) |
 | [`Kursimport-Zwischenspeicher/`](Kursimport-Zwischenspeicher/) | Kursimport vs. Block „Zwischenspeicher zum Teilen" |
