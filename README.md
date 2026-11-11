@@ -7,6 +7,7 @@ Sammlung von Materialien, die im **Zentrum für Weiterbildung und Kompetenzentwi
 | Ordner | Inhalt |
 |---|---|
 | [`Barrierefreiheit/`](Barrierefreiheit/) | Handreichung Digitale Barrierefreiheit für Lehrende |
+| [`KI/`](KI/) | OpenCode mit KI:connect.nrw: Anleitung für Lehrende und Starterordner |
 | [`MDL/`](MDL/) | Moodle-Ressourcen: Grafiken und Hilfsblätter |
 | [`Video/`](Video/) | HandBrake-Preset und OBS-Kameraformen für Videoproduktion |
 | [`test_cases/`](test_cases/) | Technische Testseiten (CORS, Einbettung) |
