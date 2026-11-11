@@ -14,7 +14,7 @@ Lehrende legen einen kleinen Wissensordner an und lassen die KI daraus Antworten
 
 | Datei oder Ordner | Inhalt |
 |---|---|
-| `opencode.json` | KI:connect als einziger Anbieter, Modell GPT-OSS 120B, keine Befehle, kein Internet, Schreiben nur im Ordner. Ohne Schlüssel. |
+| `opencode.json` | KI:connect als einziger Anbieter, Modell GPT-OSS 120B, Mistral Small 3.2 zur Auswahl, keine Befehle, kein Internet, Schreiben nur im Ordner. Ohne Schlüssel. |
 | `AGENTS.md` | Regeln für die KI: Deutsch, Sie-Form, Fakten nur aus `wissen/` |
 | `wissen/` | Wissensspeicher: `INDEX.md` als Übersicht, zwei erfundene Beispiele, eine Vorlage für das eigene Modul, dazu Wissen für die eigene Lehre (siehe unten) |
 | `anfragen/` | Testfrage und drei erfundene Anfragen von Studierenden |

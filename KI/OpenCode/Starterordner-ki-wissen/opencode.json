@@ -18,7 +18,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "options": { "baseURL": "https://chat.kiconnect.nrw/api/v1" },
       "models": {
-        "openai-gpt-oss-120b": { "name": "GPT-OSS 120B", "tool_call": true }
+        "openai-gpt-oss-120b": { "name": "GPT-OSS 120B", "tool_call": true },
+        "Mistral Small 3.2 24B Instruct 2506": { "name": "Mistral Small 3.2", "tool_call": true }
       }
     }
   }
