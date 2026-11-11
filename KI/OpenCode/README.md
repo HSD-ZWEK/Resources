@@ -16,12 +16,26 @@ Lehrende legen einen kleinen Wissensordner an und lassen die KI daraus Antworten
 |---|---|
 | `opencode.json` | KI:connect als einziger Anbieter, Modell GPT-OSS 120B, keine Befehle, kein Internet, Schreiben nur im Ordner. Ohne Schlüssel. |
 | `AGENTS.md` | Regeln für die KI: Deutsch, Sie-Form, Fakten nur aus `wissen/` |
-| `wissen/` | Wissensspeicher mit zwei erfundenen Beispielen und einer Vorlage |
+| `wissen/` | Wissensspeicher: `INDEX.md` als Übersicht, zwei erfundene Beispiele, eine Vorlage für das eigene Modul, dazu Wissen für die eigene Lehre (siehe unten) |
 | `anfragen/` | Testfrage und drei erfundene Anfragen von Studierenden |
 | `entwuerfe/` | hier legt die KI ihre Antwortentwürfe ab |
-| `.opencode/` | Skills `antwortbaustein` und `aufgabenstellung`, Prüf-Agent `pruefer` |
+| `.opencode/` | Skills `antwortbaustein`, `aufgabenstellung`, `methodenwahl` und `barrierefrei-check`, Prüf-Agent `pruefer` |
 
 Alle Personen, Fristen und Anfragen im Starterordner sind erfunden.
+
+## Wissen für die eigene Lehre
+
+| Datei | Inhalt |
+|---|---|
+| `lehre-planen.md` | 3Z-Formel, sieben Schritte der Seminarkonzeption, Lernziele nach WAS–WOMIT–WOZU, Verben nach Taxonomiestufen, Lernrhythmus, Feedback und Evaluation |
+| `methoden.md` | Methodenkartei des ZWEK mit 12 Methoden für eine Sitzung, darunter Fishbowl, Tandem-Rollenspiel und Anonymisierungsübung |
+| `barrierefreiheit.md` | Handreichung Barrierefreiheit: Word, PowerPoint, Bilder, Videos, Aufgaben, Moodle, Sofort-Checkliste |
+| `lehrmaterial-und-lizenz.md` | Arbeitsmaterial, CC BY 4.0, Quellenangabe nach TULLU |
+| `ki-regeln.md` | Pflichten aus der KI-Richtlinie Nr. 1060 der HSD (Auszug) |
+| `ki-in-der-lehre.md` | wofür KI in der Lehre nützt, etwa erfundene Fallvignetten, Selbsttests im GIFT-Format, Bewertungsraster |
+| `moodle.md` | welches Hilfsblatt des ZWEK welche Moodle-Frage beantwortet |
+
+Regeln stehen getrennt von Empfehlungen. Jeder Fakt nennt Quelle und Datum. Was im Ordner fehlt, nennt `INDEX.md`: Praxisphasen, Diversität, belastende Fallschilderungen, Nachteilsausgleich, Prüfungsrecht.
 
 ## Regeln für den eigenen Wissensordner
 
